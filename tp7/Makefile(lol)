@@ -1,0 +1,22 @@
+all: monprog.out
+
+monprog.out : main.o Arbre.o ElementA.o ElementL.o Liste.o 
+	gcc main.o Arbre.o ElementA.o ElementA.o ElementL.o Liste.o  -o monprog.out
+
+main.o : main.c Arbre.h ElementA.h ElementL.h Liste.h
+	gcc -c -g -Wall -ansi -pedantic main.c
+
+Arbre.o : Arbre.c Arbre.h ElementA.h
+	gcc -c -g -Wall -ansi -pedantic Arbre.c
+
+ElementA.o : ElementA.c ElementA.h
+	gcc -c -g -Wall -ansi -pedantic ElementA.c
+
+ElementL.o : ElementL.c ElementL.h
+	gcc -c -g -Wall -ansi -pedantic ElementL.o
+
+Liste.o : Liste.c Liste.h
+	gcc -c -g -Wall -ansi _pedantic Liste.c
+
+clean:
+	rm *.o *~

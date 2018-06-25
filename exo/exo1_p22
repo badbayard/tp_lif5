@@ -1,0 +1,34 @@
+a) 
+procedure flouNaif (monImage:tableau[hauteur][largeur]d'entier,Imagesortie:tableau[hauteur][Largeur]d'entier,entier:rayon r)
+
+pre-condition:r>0, monimage et Imagesortiesont déja allouées en mémoire
+D/R: Imagesortie
+D: monimage,r
+description: calcule la moyenne du niveau de gris dans le voisinage 
+sortie: 
+variable locale:entier i,j,l,c,somme,nbvoisins
+
+debut
+
+	mettrePixelDUBordEnNoir(monImage,r)
+	nbvoisins<---(2*r+1)*(2*r+1)
+	
+	
+	pour i allant de (r+1) a (hauteur-r) par pas de 1 faire
+		 pour j allant de (r+1) a (largeur-r) par pas de 1 faire
+		 	
+		 somme<----0
+		 	pour l allant de (lig-r) a (lig+r) par pas de 1 faire
+				pour c allant de (col-r) a (col+r) par pas de 1 faire
+					somme<----somme+monImage[l][c]
+					fin pour
+				fin pour
+			imagesortie[i][j]<---somme/nbvoisins
+			fin pour
+		fin pour
+fin
+
+
+	
+			
+
